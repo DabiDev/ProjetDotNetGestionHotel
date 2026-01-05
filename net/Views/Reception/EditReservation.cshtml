@@ -1,0 +1,49 @@
+@model Reservation
+@{
+    ViewData["Title"] = "Modifier la réservation";
+}
+
+<h2>Modifier la réservation #@Model.Id</h2>
+<hr />
+
+<form asp-action="EditReservation" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-3">
+                <div class="card-header">Informations</div>
+                <div class="card-body">
+                    <p><strong>Client:</strong> @Model.User.Name (@Model.User.Email)</p>
+                    <p><strong>Chambre:</strong> @Model.Room.Number (@Model.Room.Type)</p>
+                    <p><strong>Total actuel:</strong> @Model.Total.ToString("C")</p>
+                </div>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="checkIn" class="form-label">Date d'arrivée</label>
+                <input type="date" id="checkIn" name="checkIn" class="form-control" value="@Model.CheckIn.ToString("yyyy-MM-dd")" />
+            </div>
+            <div class="form-group mb-3">
+                <label for="checkOut" class="form-label">Date de départ</label>
+                <input type="date" id="checkOut" name="checkOut" class="form-control" value="@Model.CheckOut.ToString("yyyy-MM-dd")" />
+            </div>
+            <div class="form-group mb-3">
+                <label for="status" class="form-label">Statut</label>
+                <select id="status" name="status" class="form-select">
+                    <option value="0" selected="@(Model.Status == ReservationStatus.EnAttente)">En attente</option>
+                    <option value="1" selected="@(Model.Status == ReservationStatus.Confirmee)">Confirmée</option>
+                    <option value="2" selected="@(Model.Status == ReservationStatus.Annulee)">Annulée</option>
+                    <option value="3" selected="@(Model.Status == ReservationStatus.Terminee)">Terminée</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+                <a asp-action="Reservations" class="btn btn-secondary">Annuler</a>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+

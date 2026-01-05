@@ -1,0 +1,82 @@
+@model List<Reservation>
+@{
+    ViewData["Title"] = "Mes Réservations";
+}
+
+<h2><i class="fas fa-list me-2"></i>Mes Réservations</h2>
+<hr />
+
+@if (Model.Any())
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Chambre</th>
+                    <th>Type</th>
+                    <th>Arrivée</th>
+                    <th>Départ</th>
+                    <th>Nuits</th>
+                    <th>Total</th>
+                    <th>Statut</th>
+                    <th>Date de création</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var reservation in Model)
+                {
+                    var nights = (reservation.CheckOut - reservation.CheckIn).Days;
+                    var statusClass = reservation.Status switch
+                    {
+                        ReservationStatus.Confirmee => "success",
+                        ReservationStatus.Annulee => "danger",
+                        ReservationStatus.EnAttente => "warning",
+                        ReservationStatus.Terminee => "secondary",
+                        _ => "secondary"
+                    };
+                    var statusText = reservation.Status switch
+                    {
+                        ReservationStatus.Confirmee => "Confirmée",
+                        ReservationStatus.Annulee => "Annulée",
+                        ReservationStatus.EnAttente => "En attente",
+                        ReservationStatus.Terminee => "Terminée",
+                        _ => reservation.Status.ToString()
+                    };
+
+                    <tr>
+                        <td>@reservation.Room.Number</td>
+                        <td>@reservation.Room.Type</td>
+                        <td>@reservation.CheckIn.ToString("dd/MM/yyyy")</td>
+                        <td>@reservation.CheckOut.ToString("dd/MM/yyyy")</td>
+                        <td>@nights</td>
+                        <td>@reservation.Total.ToString("C")</td>
+                        <td><span class="badge bg-@statusClass">@statusText</span></td>
+                        <td>@reservation.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                        <td>
+                            @if (reservation.Status != ReservationStatus.Annulee && reservation.CheckIn > DateTime.Today)
+                            {
+                                <form asp-action="Cancel" method="post" style="display: inline;">
+                                    <input type="hidden" name="id" value="@reservation.Id" />
+                                    <button type="submit" class="btn btn-sm btn-danger" 
+                                            onclick="return confirm('Êtes-vous sûr de vouloir annuler cette réservation ?');">
+                                        Annuler
+                                    </button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        Vous n'avez aucune réservation.
+    </div>
+}
+
+
+

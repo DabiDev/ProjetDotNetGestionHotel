@@ -1,0 +1,135 @@
+﻿Utilisation des param├¿tres de lancement ├á partir de c:\Users\PC\Downloads\net\net\Properties\launchSettings.json...
+G├®n├®ration...
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+info: Microsoft.EntityFrameworkCore.Database.Command[35000]
+      Executed MQL query
+      HotelDb.users.aggregate([?])
+fail: Microsoft.EntityFrameworkCore.Query[10100]
+      An exception occurred while iterating over the results of a query for context type 'HotelManagement.Data.HotelDbContext'.
+      System.Reflection.TargetException: Object type MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1[HotelManagement.Models.User] does not match target type MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1[HotelManagement.Models.Room].
+         at System.Reflection.MethodInvokerCommon.ValidateInvokeTarget(Object target, MethodBase method)
+         at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+         at System.Reflection.PropertyInfo.GetValue(Object obj)
+         at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+         at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+         at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+         at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNext()
+      System.Reflection.TargetException: Object type MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1[HotelManagement.Models.User] does not match target type MongoDB.Driver.Linq.Linq3Implementation.MongoQueryProvider`1[HotelManagement.Models.Room].
+         at System.Reflection.MethodInvokerCommon.ValidateInvokeTarget(Object target, MethodBase method)
+         at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+         at System.Reflection.PropertyInfo.GetValue(Object obj)
+         at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.ExecuteScalar[T](MongoExecutableQuery executableQuery)
+         at MongoDB.EntityFrameworkCore.Storage.MongoClientWrapper.Execute[T](MongoExecutableQuery executableQuery, Action& log)
+         at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNextHelper()
+         at MongoDB.EntityFrameworkCore.Query.QueryingEnumerable`2.Enumerator.MoveNext()
+dotnet : Unhandled 
+exception. System.Ref
+lection.TargetExcepti
+on: Object type Mongo
+DB.Driver.Linq.Linq3I
+mplementation.MongoQu
+eryProvider`1[HotelMa
+nagement.Models.User]
+ does not match 
+target type MongoDB.D
+river.Linq.Linq3Imple
+mentation.MongoQueryP
+rovider`1[HotelManage
+ment.Models.Room].
+Au caractère Ligne:1 
+: 1
++ dotnet run 
+--project c:/Users/PC
+/Downloads/net/net/Ho
+telManagement.cs ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Unhandl   
+ ed excep...t.Mod    
+els.Room].:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+   at System.Reflecti
+on.MethodInvokerCommo
+n.ValidateInvokeTarge
+t(Object target, 
+MethodBase method)
+   at System.Reflecti
+on.RuntimeMethodInfo.
+Invoke(Object obj, 
+BindingFlags 
+invokeAttr, Binder 
+binder, Object[] 
+parameters, 
+CultureInfo culture)
+   at System.Reflecti
+on.PropertyInfo.GetVa
+lue(Object obj)
+   at MongoDB.EntityF
+rameworkCore.Storage.
+MongoClientWrapper.Ex
+ecuteScalar[T](MongoE
+xecutableQuery 
+executableQuery)
+   at MongoDB.EntityF
+rameworkCore.Storage.
+MongoClientWrapper.Ex
+ecute[T](MongoExecuta
+bleQuery 
+executableQuery, 
+Action& log)
+   at MongoDB.EntityF
+rameworkCore.Query.Qu
+eryingEnumerable`2.En
+umerator.MoveNextHelp
+er()
+   at MongoDB.EntityF
+rameworkCore.Query.Qu
+eryingEnumerable`2.En
+umerator.MoveNext()
+   at System.Linq.Enu
+merable.TryGetSingle[
+TSource](IEnumerable`
+1 source, Boolean& 
+found)
+   at System.Linq.Enu
+merable.Single[TSourc
+e](IEnumerable`1 
+source)
+   at lambda_method5(
+Closure, 
+QueryContext)
+   at Microsoft.Entit
+yFrameworkCore.Query.
+Internal.QueryCompile
+r.Execute[TResult](Ex
+pression query)
+   at Microsoft.Entit
+yFrameworkCore.Query.
+Internal.EntityQueryP
+rovider.Execute[TResu
+lt](Expression 
+expression)
+   at HotelManagement
+.Data.SeedData.Initia
+lizeAsync(HotelDbCont
+ext context) in c:\Us
+ers\PC\Downloads\net\
+net\Data\SeedData.cs:
+line 12
+   at Program.<Main>$
+(String[] args) in c:
+\Users\PC\Downloads\n
+et\net\Program.cs:lin
+e 39
+   at Program.<Main>(
+String[] args)

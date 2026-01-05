@@ -1,0 +1,6 @@
+﻿Utilisation des param├¿tres de lancement ├á partir de c:\Users\PC\Downloads\net\net\Properties\launchSettings.json...
+G├®n├®ration...
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+c:\Users\PC\Downloads\net\net\Models\Reservation.cs(39,6): error CS0579: Attribut 'Required' en double [c:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+c:\Users\PC\Downloads\net\net\Models\Room.cs(23,6): error CS0579: Attribut 'Required' en double [c:\Users\PC\Downloads\net\net\HotelManagement.csproj]

@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Accueil";
+}
+
+<div class="hero-section mb-5">
+    <h1><i class="fas fa-hotel me-3"></i>Bienvenue à l'Hôtel</h1>
+    <p class="lead">Gérez vos réservations facilement et efficacement</p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-6 mb-4">
+        <div class="card room-card text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <i class="fas fa-user-circle fa-4x text-primary"></i>
+                </div>
+                <h3 class="card-title">Client</h3>
+                <p class="card-text mb-4">Recherchez et réservez une chambre en quelques clics</p>
+                <div class="d-grid gap-2">
+                    <a asp-controller="Home" asp-action="Register" class="btn btn-primary btn-lg">
+                        <i class="fas fa-user-plus me-2"></i>S'inscrire
+                    </a>
+                    <a asp-controller="Home" asp-action="Login" class="btn btn-outline-primary">
+                        <i class="fas fa-sign-in-alt me-2"></i>Se connecter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card room-card text-center">
+            <div class="card-body p-4">
+                <div class="mb-3">
+                    <i class="fas fa-user-tie fa-4x text-success"></i>
+                </div>
+                <h3 class="card-title">Réceptionniste</h3>
+                <p class="card-text mb-4">Gérez les chambres, réservations et tableaux de bord</p>
+                <div class="d-grid">
+                    <a asp-controller="Home" asp-action="Login" class="btn btn-success btn-lg">
+                        <i class="fas fa-sign-in-alt me-2"></i>Connexion
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

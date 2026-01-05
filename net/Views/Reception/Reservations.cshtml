@@ -1,0 +1,183 @@
+@model IEnumerable<Reservation>
+@{
+    ViewData["Title"] = "Réservations";
+}
+
+<div class="container-fluid">
+    <div class="card shadow-sm mb-4">
+        <div class="card-body d-flex align-items-center justify-content-between">
+            <div>
+                <h3 class="mb-0">Réservations</h3>
+                <small class="text-muted">Gérez et approuvez les réservations depuis ce panneau</small>
+            </div>
+            <div class="text-end">
+                <a asp-action="Create" class="btn btn-outline-primary btn-sm">Nouvelle réservation</a>
+                <a asp-action="Dashboard" class="btn btn-outline-secondary btn-sm">Retour au tableau de bord</a>
+            </div>
+        </div>
+    </div>
+
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <div class="card mb-3">
+        <div class="card-body">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-text"><i class="bi bi-search"></i></span>
+                        <input id="reservationSearch" type="search" class="form-control" placeholder="Rechercher par client, email, numéro de chambre..." />
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <select id="statusFilter" class="form-select">
+                        <option value="all">Tous les statuts</option>
+                        <option value="EnAttente">En attente</option>
+                        <option value="Confirmee">Confirmée</option>
+                        <option value="Annulee">Annulée</option>
+                        <option value="Terminee">Terminée</option>
+                    </select>
+                </div>
+                <div class="col-md-4 text-md-end">
+                    <span class="badge bg-warning text-dark me-2">En attente: @Model.Count(r => r.Status == ReservationStatus.EnAttente)</span>
+                    <span class="badge bg-success me-2">Confirmées: @Model.Count(r => r.Status == ReservationStatus.Confirmee)</span>
+                    <span class="badge bg-danger me-2">Annulées: @Model.Count(r => r.Status == ReservationStatus.Annulee)</span>
+                    <span class="badge bg-secondary">Terminées: @Model.Count(r => r.Status == ReservationStatus.Terminee)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table id="reservationsTable" class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Client</th>
+                            <th scope="col">Chambre</th>
+                            <th scope="col">Arrivée</th>
+                            <th scope="col">Départ</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Statut</th>
+                            <th scope="col">Créée</th>
+                            <th scope="col" class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var reservation in Model)
+                        {
+                            var statusClass = reservation.Status == ReservationStatus.EnAttente ? "warning"
+                                            : reservation.Status == ReservationStatus.Confirmee ? "success"
+                                            : reservation.Status == ReservationStatus.Annulee ? "danger"
+                                            : "secondary";
+                            <tr data-status="@reservation.Status.ToString()" data-search="@($"{reservation.User.Name} {reservation.User.Email} {reservation.Room.Number}")">
+                                <td class="fw-semibold">@reservation.Id</td>
+                                <td>
+                                    <div class="small">@reservation.User.Name</div>
+                                    <div class="text-muted small">@reservation.User.Email</div>
+                                </td>
+                                <td>
+                                    <div class="small">N° @reservation.Room.Number</div>
+                                    <div class="text-muted small">@reservation.Room.Type</div>
+                                </td>
+                                <td>@reservation.CheckIn.ToString("dd/MM/yyyy")</td>
+                                <td>@reservation.CheckOut.ToString("dd/MM/yyyy")</td>
+                                <td class="fw-medium">@reservation.Total.ToString("C")</td>
+                                <td>
+                                    <span class="badge bg-@statusClass text-capitalize">@reservation.Status.ToString()</span>
+                                </td>
+                                <td class="text-muted small">@reservation.CreatedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td class="text-end">
+                                    <div class="btn-group" role="group" aria-label="Actions">
+                                        <a asp-action="EditReservation" asp-route-id="@reservation.Id" class="btn btn-sm btn-outline-primary" title="Modifier">
+                                            <i class="bi bi-pencil"></i>
+                                        </a>
+
+                                        @if (reservation.Status == ReservationStatus.EnAttente)
+                                        {
+                                            <form asp-action="ApproveReservation" method="post" style="display:inline;">
+                                                <input type="hidden" name="id" value="@reservation.Id" />
+                                                <button type="submit" class="btn btn-sm btn-success" title="Approuver" onclick="return confirm('Approuver cette réservation ?');">
+                                                    <i class="bi bi-check2-circle"></i>
+                                                </button>
+                                            </form>
+                                        }
+
+                                        @if (reservation.Status != ReservationStatus.Annulee)
+                                        {
+                                            <form asp-action="CancelReservation" method="post" style="display:inline;">
+                                                <input type="hidden" name="id" value="@reservation.Id" />
+                                                <button type="submit" class="btn btn-sm btn-outline-danger" title="Annuler" onclick="return confirm('Annuler cette réservation ?');">
+                                                    <i class="bi bi-x-circle"></i>
+                                                </button>
+                                            </form>
+                                        }
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div id="noResults" class="text-center p-4 d-none">
+                <p class="mb-0 text-muted">Aucune réservation ne correspond à votre recherche.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            const searchInput = document.getElementById('reservationSearch');
+            const statusSelect = document.getElementById('statusFilter');
+            const table = document.getElementById('reservationsTable');
+            const rows = Array.from(table.querySelectorAll('tbody tr'));
+            const noResults = document.getElementById('noResults');
+
+            function normalize(text) {
+                return (text || '').toString().toLowerCase().trim();
+            }
+
+            function applyFilter() {
+                const q = normalize(searchInput.value);
+                const status = statusSelect.value; // "all" or enum string
+
+                let visibleCount = 0;
+                rows.forEach(row => {
+                    const rowStatus = row.getAttribute('data-status') || '';
+                    const rowSearch = normalize(row.getAttribute('data-search'));
+
+                    const matchesStatus = (status === 'all') || (rowStatus === status);
+                    const matchesQuery = q === '' || rowSearch.indexOf(q) !== -1;
+
+                    const show = matchesStatus && matchesQuery;
+                    row.style.display = show ? '' : 'none';
+                    if (show) visibleCount++;
+                });
+
+                noResults.classList.toggle('d-none', visibleCount !== 0);
+            }
+
+            searchInput.addEventListener('input', applyFilter);
+            statusSelect.addEventListener('change', applyFilter);
+        })();
+    </script>
+}
+
+
+

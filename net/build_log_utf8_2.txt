@@ -1,0 +1,14 @@
+﻿  Identification des projets ├á restaurer...
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+  Tous les projets sont ├á jour pour la restauration.
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+  HotelManagement -> C:\Users\PC\Downloads\net\net\bin\Debug\net10.0\HotelManagement.dll
+
+La g├®n├®ration a r├®ussi.
+
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+    2 Avertissement(s)
+    0 Erreur(s)
+
+Temps ├®coul├® 00:00:03.74

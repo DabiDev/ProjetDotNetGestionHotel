@@ -1,0 +1,19 @@
+﻿  Identification des projets ├á restaurer...
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+  Restauration effectu├®e de C:\Users\PC\Downloads\net\net\HotelManagement.csproj (en 641 ms).
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+C:\Users\PC\Downloads\net\net\Data\HotelDbContext.cs(22,37): error CS1061: 'EntityTypeBuilder<User>' ne contient pas de d├®finition pour 'ToCollection' et aucune m├®thode d'extension accessible 'ToCollection' acceptant un premier argument de type 'EntityTypeBuilder<User>' n'a ├®t├® trouv├®e (une directive using ou une r├®f├®rence d'assembly est-elle manquante┬á?) [C:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+C:\Users\PC\Downloads\net\net\Data\HotelDbContext.cs(23,37): error CS1061: 'EntityTypeBuilder<Room>' ne contient pas de d├®finition pour 'ToCollection' et aucune m├®thode d'extension accessible 'ToCollection' acceptant un premier argument de type 'EntityTypeBuilder<Room>' n'a ├®t├® trouv├®e (une directive using ou une r├®f├®rence d'assembly est-elle manquante┬á?) [C:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+C:\Users\PC\Downloads\net\net\Data\HotelDbContext.cs(24,44): error CS1061: 'EntityTypeBuilder<Reservation>' ne contient pas de d├®finition pour 'ToCollection' et aucune m├®thode d'extension accessible 'ToCollection' acceptant un premier argument de type 'EntityTypeBuilder<Reservation>' n'a ├®t├® trouv├®e (une directive using ou une r├®f├®rence d'assembly est-elle manquante┬á?) [C:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+
+├ëCHEC de la build.
+
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+C:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+C:\Users\PC\Downloads\net\net\Data\HotelDbContext.cs(22,37): error CS1061: 'EntityTypeBuilder<User>' ne contient pas de d├®finition pour 'ToCollection' et aucune m├®thode d'extension accessible 'ToCollection' acceptant un premier argument de type 'EntityTypeBuilder<User>' n'a ├®t├® trouv├®e (une directive using ou une r├®f├®rence d'assembly est-elle manquante┬á?) [C:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+C:\Users\PC\Downloads\net\net\Data\HotelDbContext.cs(23,37): error CS1061: 'EntityTypeBuilder<Room>' ne contient pas de d├®finition pour 'ToCollection' et aucune m├®thode d'extension accessible 'ToCollection' acceptant un premier argument de type 'EntityTypeBuilder<Room>' n'a ├®t├® trouv├®e (une directive using ou une r├®f├®rence d'assembly est-elle manquante┬á?) [C:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+C:\Users\PC\Downloads\net\net\Data\HotelDbContext.cs(24,44): error CS1061: 'EntityTypeBuilder<Reservation>' ne contient pas de d├®finition pour 'ToCollection' et aucune m├®thode d'extension accessible 'ToCollection' acceptant un premier argument de type 'EntityTypeBuilder<Reservation>' n'a ├®t├® trouv├®e (une directive using ou une r├®f├®rence d'assembly est-elle manquante┬á?) [C:\Users\PC\Downloads\net\net\HotelManagement.csproj]
+    2 Avertissement(s)
+    3 Erreur(s)
+
+Temps ├®coul├® 00:00:03.89

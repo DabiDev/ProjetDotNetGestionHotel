@@ -1,0 +1,27 @@
+﻿Utilisation des param├¿tres de lancement ├á partir de c:\Users\PC\Downloads\net\net\Properties\launchSettings.json...
+G├®n├®ration...
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+info: Microsoft.EntityFrameworkCore.Database.Command[35000]
+      Executed MQL query
+      HotelDb.users.aggregate([?])
+info: Microsoft.EntityFrameworkCore.Database.Command[35000]
+      Executed MQL query
+      HotelDb.users.aggregate([?])
+info: Microsoft.EntityFrameworkCore.Database.Command[35001]
+      Executed Bulk Write (96,0431 ms) Collection='HotelDb.users', Inserted=1, Deleted=0, Modified=0
+info: Microsoft.EntityFrameworkCore.Database.Command[35000]
+      Executed MQL query
+      HotelDb.users.aggregate([?])
+info: Microsoft.EntityFrameworkCore.Database.Command[35001]
+      Executed Bulk Write (1,9011 ms) Collection='HotelDb.users', Inserted=1, Deleted=0, Modified=0
+info: Microsoft.EntityFrameworkCore.Database.Command[35001]
+      Executed Bulk Write (11,8976 ms) Collection='HotelDb.rooms', Inserted=8, Deleted=0, Modified=0
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Development
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: c:\Users\PC\Downloads\net\net

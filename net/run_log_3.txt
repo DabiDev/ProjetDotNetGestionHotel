@@ -1,0 +1,48 @@
+﻿Utilisation des param├¿tres de lancement ├á partir de c:\Users\PC\Downloads\net\net\Properties\launchSettings.json...
+G├®n├®ration...
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+c:\Users\PC\Downloads\net\net\HotelManagement.csproj : warning NU1603: HotelManagement d├®pend de MongoDB.EntityFrameworkCore (>= 7.0.0) mais MongoDB.EntityFrameworkCore 7.0.0 est introuvable. MongoDB.EntityFrameworkCore 8.0.0 a ├®t├® r├®solu ├á la place.
+dotnet : Unhandled 
+exception. System.Not
+SupportedException: 
+The MongoDB EF Core 
+Provider does not 
+support 
+'EnsureCreated' of 'M
+ongoDatabaseCreator'.
+Au caractère Ligne:1 
+: 1
++ dotnet run 
+--project c:/Users/PC
+/Downloads/net/net/Ho
+telManagement.cs ...
++ ~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (Unhandl   
+ ed excep...tabas    
+eCreator'.:Strin    
+g) [], RemoteExc    
+eption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+   at MongoDB.EntityF
+rameworkCore.Storage.
+MongoDatabaseCreator.
+EnsureCreated()
+   at Microsoft.Entit
+yFrameworkCore.Infras
+tructure.DatabaseFaca
+de.EnsureCreated()
+   at Program.<Main>$
+(String[] args) in c:
+\Users\PC\Downloads\n
+et\net\Program.cs:lin
+e 36
+   at Program.<Main>(
+String[] args)
